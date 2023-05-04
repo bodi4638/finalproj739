@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Outfit Recommender</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = 'home.html';
+            checkLoggedIn();
+        }
+    </script>
+    <style>
+        /* Center the container */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="sidenav">
+    <div class="logo">
+        <img src="image/LogoMakr-5Uf4k5.png" alt="The Virtual Stylist logo">
+    </div>
+    <a href="home.html">Home</a>
+    <a href="recommend.html">Virtual Stylist</a>
+    <a href="profile.html">My Profile</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="logout()">Logout</button>
+</div>
+<header>
+    <h1>About The Virtual Stylist</h1>
+</header>
+<main>
+    <div class="container">
+        <p>In today's world, busy, working individuals often struggle to decide what to wear each day, particularly when the temperature is unpredictable. With the challenge of matching their outfits to the current weather, these individuals often waste time and become frustrated leading to stress in their day to day lives. Because of this, The Virtual Stylist provides outfit ideas based on the current weather conditions that could make getting dressed in the mornings a more peaceful and stress-free experience. </p>
+
+        <p>The Virtual Stylist app will be very intuitive and give accurate recommendations based on current data. Unlike its competitors, The Virtual Stylist will be straight to the point and plain in its recommendations, leaving you with a clear idea of what outfit to choose for the weather. By using this app, busy, working individuals can save time and make more informed, hassle-free decisions ensuring that they are dressed appropriately for the day ahead.</p>
+
+        <p>If you have any questions or feedback about The Virtual Stylist, please don't hesitate to <a href="contact.html">contact us</a>.</p>
+    </div>
+</main>
+
+</body>
+</html>

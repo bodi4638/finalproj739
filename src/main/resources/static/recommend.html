@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Stylist</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script>
+        window.onload = function() {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+
+            today = yyyy + '-' + mm + '-' + dd;
+            document.getElementById("date").value = today;
+        };
+
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = 'home.html';
+            checkLoggedIn();
+        }
+    </script>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #F3F3F3;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="sidenav">
+    <div class="logo">
+        <img src="image/LogoMakr-5Uf4k5.png" alt="The Virtual Stylist logo">
+    </div>
+    <a href="home.html">Home</a>
+    <a href="recommend.html">Virtual Stylist</a>
+    <a href="profile.html">My Profile</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button onclick="logout()">Logout</button>
+</div>
+<div class="main">
+    <div class="container">
+        <form>
+            <h1>Virtual Stylist</h1>
+            <p>Enter your location to get an outfit recommendation based on the weather:</p>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit" id="submit-btn">Get Outfit Recommendation</button>
+            <br>
+            <button type="button" id="reload-btn">Reload Form</button>
+        </form>
+
+        <div id="output">
+            <p id="outfit-title"></p>
+            <ul id="outfit-items"></ul>
+        </div>
+        <div id="weather"></div>
+    </div>
+
+    <script src="recommend.js"></script>
+</div>
+</body>
+</html>

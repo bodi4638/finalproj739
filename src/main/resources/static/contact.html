@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <script type="text/javascript" src="contactus.js"></script>
+
+</head>
+
+<body>
+<header>
+    <div class="sidenav">
+        <div class="logo">
+            <img src="image/LogoMakr-5Uf4k5.png" alt="The Virtual Stylist logo">
+        </div>
+        <a href="home.html">Home</a>
+        <a href="recommend.html">Virtual Stylist</a>
+        <a href="profile.html">My Profile</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="contact-details">
+            <h2>Contact Us</h2>
+            <dt>If you have any questions or inquiries, please feel free to get in touch with us!</dt>
+            <h2>Contact Details</h2>
+            <ul>
+                <dt><span style="font-weight:bold;">Phone:</span> 123-456-7890</dt>
+                <br>
+                <dt><span style="font-weight:bold;">Email:</span> virtualstylist@vs.org</dt>
+                <br>
+                <dt><span style="font-weight:bold;">Address:</span> University of St. Thomas, Minnesota
+                    2115 Summit Avenue
+                    St. Paul, Minnesota 55105 USA </dt>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Form</h2>
+            <form action="contact" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+    </div>
+    <div class="faq">
+        <h2>FAQ</h2>
+        <dl>
+            <dt>Q: How can I contact customer support?</dt>
+            <dd>A: You can contact our customer support by phone or email, as listed above, or by using the contact
+                form.</dd>
+            <dt>Q: What are your business hours?</dt>
+            <dd>A: Our business hours are Monday to Friday, 9:00am to 5:00pm.</dd>
+
+        </dl>
+    </div>
+
+</main>
+
+<script src="contactus.js"></script>
+</body>
+
+</html>

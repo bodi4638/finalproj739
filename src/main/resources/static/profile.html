@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Outfit Recommender</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = 'home.html';
+            checkLoggedIn();
+        }
+    </script>
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            height: 500px;
+        }
+
+        h1 {
+            color: #444;
+            font-size: 4rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .profile-pic img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-right: 2rem;
+        }
+
+        h2 {
+            color: #ff8b94;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #444;
+            margin: 0.5rem 0;
+        }
+
+        .accent1 {
+            color: #ff8b94;
+        }
+
+        .accent2 {
+            color: #ffc585;
+        }
+    </style>
+</head>
+<body>
+<div class="sidenav">
+    <div class="logo">
+        <img src="image/LogoMakr-5Uf4k5.png" alt="The Virtual Stylist logo">
+    </div>
+    <a href="home.html">Home</a>
+    <a href="recommend.html">Virtual Stylist</a>
+    <a href="profile.html">My Profile</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button onclick="logout()">Logout</button>
+</div>
+<div class="main">
+    <h1>My Profile</h1>
+    <div class="profile">
+        <div class="profile-pic">
+            <img src="image/profile-pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h2>Ansley Bodine</h2>
+            <p>Email: bodi4638@stthomas.edu</p>
+            <p>Location: Tampa, FL</p>
+            <p>Temperature Unit: Fahrenheit</p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

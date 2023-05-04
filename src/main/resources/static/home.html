@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Outfit Recommender</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["username"].value;
+            var password = document.forms["loginForm"]["password"].value;
+            if (username != "Ansley" || password != "password") {
+                alert("Invalid username or password");
+                return false;
+            }
+            return true;
+        }
+        function displayHomePage() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("normalContent").style.display = "block";
+            var normalElements = document.getElementsByClassName("normal");
+            for (var i = 0; i < normalElements.length; i++) {
+                normalElements[i].style.display = "block";
+            }
+            localStorage.setItem("loggedIn", true);
+        }
+
+        function checkLoggedIn() {
+            if (localStorage.getItem("loggedIn")) {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("normalContent").style.display = "block";
+                document.getElementsByClassName("normal").style.display = "block"
+            } else {
+                document.getElementById("loginForm").style.display = "block";
+                document.getElementById("normalContent").style.display = "none";
+                document.getElementsByClassName("normal").style.display = "block"
+            }
+        }
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = 'home.html';
+            checkLoggedIn();
+        }
+    </script>
+
+
+</head>
+<body onload="checkLoggedIn()">
+<div class="sidenav">
+    <div class="logo">
+        <img src="image/LogoMakr-5Uf4k5.png" alt="The Virtual Stylist logo">
+    </div>
+    <a href="home.html">Home</a>
+    <a href="recommend.html">Virtual Stylist</a>
+    <a href="profile.html">My Profile</a>
+     <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div id="loginForm" class="login-form">
+    <form name="loginForm" onsubmit="event.preventDefault(); (function() { if(validateForm()) displayHomePage(); })();">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+<div id="normalContent" class="home-content" style="display: flex; justify-content: center; align-items: center; height: 800vh;">
+    <div style="max-width: 400px; margin: 0 auto; padding: 40px; background-color: #FFF; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+        <h1>Welcome to The Virtual Stylist!</h1>
+        <p>Looking for an outfit that's both stylish and appropriate for the temperature? You've come to the right place! Our algorithm analyzes the temperature in your area to recommend an outfit that's perfect for you.</p>
+        <button onclick="location.href='recommend.html'" style="display: block; width: 100%; padding: 10px; border-radius: 5px; border: none; background-color: #b11272; font-size: 16px; font-weight: 700; color: #FFF; cursor: pointer; transition: background-color 0.3s ease;">Get Started</button>
+    </div>
+</div>
+
+
+
+
+</body>
+<script>
+    window.addEventListener('load', checkLoggedIn);
+</script>
+
+</html>
+
+
+
